@@ -10,8 +10,8 @@ export class IndexRoutes {
     }
 
     config():void {
-        this.router.post('/', indexController.createCustomer);
-        this.router.get('/:id', indexController.login);
+        this.router.post('/new', indexController.createCustomer);
+        this.router.get('/login', indexController.login);
     }
 }
 

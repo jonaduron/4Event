@@ -9,14 +9,14 @@ class EventController {
     }
 
     public async getEvent(req: Request, res: Response):Promise<any> {
-        const evento = await pool.query("SELECT * FROM eventos WHERE id = ?", [req.params.id]);
+        const evento = await pool.query("SELECT * FROM evento WHERE id = ?", [req.params.id]);
         if(evento.length > 0)
             return res.json(evento[0]);
         res.status(404).json({message: "No se ha encontrado el evento"});
     }
     
     public async getEventsByCustomer(req: Request, res: Response):Promise<any> {
-        const eventos = await pool.query("SELECT * FROM eventos WHERE client_id = ?", [req.params.client_id]);
+        const eventos = await pool.query("SELECT * FROM evento WHERE id_cliente = ?", [req.params.client_id]);
         if(eventos.length > 0)
             res.json(eventos);
         else 
@@ -24,7 +24,7 @@ class EventController {
     }
 
     public async getEventsByProvider(req: Request, res: Response):Promise<any> {
-        const eventos = await pool.query("SELECT * FROM eventos WHERE proveedor_id = ?", [req.params.proveedor_id]);
+        const eventos = await pool.query("SELECT * FROM evento WHERE id_proveedor = ?", [req.params.proveedor_id]);
         if(eventos.length > 0)
             res.json(eventos);
         else 
@@ -32,7 +32,7 @@ class EventController {
     }
     
     public async updateEvent(req: Request, res: Response) {
-        await pool.query("UPDATE eventos SET ? WHERE id = ?", [req.body, req.params.id]);
+        await pool.query("UPDATE evento SET ? WHERE id = ?", [req.body, req.params.id]);
         res.json({message: "El evento ha sido actualizado"});
     }
 

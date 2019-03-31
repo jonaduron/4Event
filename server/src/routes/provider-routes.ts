@@ -9,11 +9,10 @@ class ProviderRoutes {
         this.config();
     }
 
-    // Falta definir las rutas exactas con las que trabajará cada método
     config():void {
-        this.router.get('/', providersController.listProviders);
-        this.router.get('/:id', providersController.getAProvider);
-        this.router.put('/:id', providersController.updateProvider);
+        this.router.get('/home', providersController.listProviders);
+        this.router.get('/provider/details/:id', providersController.getAProvider);
+        this.router.put('/provider/details/:id', providersController.updateProvider);
     }
 }
 
