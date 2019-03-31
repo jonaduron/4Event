@@ -23,7 +23,8 @@ class Server {
     }
 
     routes():void {
-        this.app.use('/', IndexRoutes);
+        this.app.use('/login', IndexRoutes);
+        this.app.use('/new', IndexRoutes);
     }
 
     start():void {
