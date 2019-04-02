@@ -12,9 +12,9 @@ var CustomerRoutes = /** @class */ (function () {
     }
     // Falta definir las rutas con las que trabajará cada método
     CustomerRoutes.prototype.config = function () {
-        this.router.delete('/:id', customer_controller_1.default.deleteCustomer);
-        this.router.get('/:id', customer_controller_1.default.getCustomer);
-        this.router.put('/:id', customer_controller_1.default.updateCustomer);
+        this.router.delete('/details/:id', customer_controller_1.default.deleteCustomer);
+        this.router.get('/details/:id', customer_controller_1.default.getCustomer);
+        this.router.put('/details/:id', customer_controller_1.default.updateCustomer);
     };
     return CustomerRoutes;
 }());

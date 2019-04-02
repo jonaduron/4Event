@@ -47,7 +47,7 @@ var CustomerController = /** @class */ (function () {
             var customers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM usuario WHERE id = ?", [req.params.id])];
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM cliente WHERE id = ?", [req.params.id])];
                     case 1:
                         customers = _a.sent();
                         if (customers.length > 0) {
@@ -63,7 +63,7 @@ var CustomerController = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("UPDATE usuario SET ? WHERE id = ?", [req.body, req.params.id])];
+                    case 0: return [4 /*yield*/, database_1.default.query("UPDATE cliente SET ? WHERE id = ?", [req.body, req.params.id])];
                     case 1:
                         _a.sent();
                         res.json({ message: "The user has been updated" });
@@ -76,7 +76,7 @@ var CustomerController = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("DELETE FROM usuario WHERE id = ?", [req.params.id])];
+                    case 0: return [4 /*yield*/, database_1.default.query("DELETE FROM cliente WHERE id = ?", [req.params.id])];
                     case 1:
                         _a.sent();
                         res.json({ message: "The user has been deleted succesfully" });

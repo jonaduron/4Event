@@ -11,9 +11,9 @@ class CustomerRoutes {
 
     // Falta definir las rutas con las que trabajará cada método
     config():void {
-        this.router.delete('/customer/details/:id', customerController.deleteCustomer);
-        this.router.get('customer/details/:id', customerController.getCustomer);
-        this.router.put('customer/details/:id', customerController.updateCustomer);
+        this.router.delete('/details/:id', customerController.deleteCustomer);
+        this.router.get('/details/:id', customerController.getCustomer);
+        this.router.put('/details/:id', customerController.updateCustomer);
     }
 }
 

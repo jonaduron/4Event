@@ -7,6 +7,11 @@ var express_1 = __importDefault(require("express"));
 var morgan_1 = __importDefault(require("morgan"));
 var cors_1 = __importDefault(require("cors"));
 var index_routes_1 = __importDefault(require("./routes/index-routes"));
+var report_routes_1 = __importDefault(require("./routes/report-routes"));
+var customer_routes_1 = __importDefault(require("./routes/customer-routes"));
+var event_routes_1 = __importDefault(require("./routes/event-routes"));
+var provider_routes_1 = __importDefault(require("./routes/provider-routes"));
+var packets_routes_1 = __importDefault(require("./routes/packets-routes"));
 var Server = /** @class */ (function () {
     function Server() {
         this.app = express_1.default();
@@ -21,8 +26,12 @@ var Server = /** @class */ (function () {
         this.app.use(express_1.default.urlencoded({ extended: false }));
     };
     Server.prototype.routes = function () {
-        this.app.use('/login', index_routes_1.default);
-        this.app.use('/new', index_routes_1.default);
+        this.app.use('/', index_routes_1.default);
+        this.app.use('/customer', customer_routes_1.default);
+        this.app.use('/reports', report_routes_1.default);
+        this.app.use('/events', event_routes_1.default);
+        this.app.use('/provider', provider_routes_1.default);
+        this.app.use('/packet', packets_routes_1.default);
     };
     Server.prototype.start = function () {
         var _this = this;

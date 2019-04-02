@@ -65,7 +65,7 @@ var IndexController = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("INSERT INTO usuario set ?", [req.body])];
+                    case 0: return [4 /*yield*/, database_1.default.query("INSERT INTO cliente set ?", [req.body])];
                     case 1:
                         _a.sent();
                         res.json({ message: 'El usuario ha sido agregado' });

@@ -11,8 +11,11 @@ var PacketRoutes = /** @class */ (function () {
         this.config();
     }
     PacketRoutes.prototype.config = function () {
-        this.router.get('/', packet_controller_1.default.getPacket);
-        this.router.get('/', packet_controller_1.default.getPacketsByProvider);
+        this.router.get('/packets/details/:id', packet_controller_1.default.getPacket);
+        this.router.get('/packets/:proveedor_id', packet_controller_1.default.getPacketsByProvider);
+        this.router.post('/packets/new', packet_controller_1.default.createPacket);
+        this.router.put('/packets/details/:id', packet_controller_1.default.updatePacket);
+        this.router.delete('/packets/details/:id', packet_controller_1.default.deletePacket);
     };
     return PacketRoutes;
 }());

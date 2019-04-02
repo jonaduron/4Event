@@ -3,6 +3,11 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import IndexRoutes from './routes/index-routes';
+import ReportRoutes from './routes/report-routes';
+import CustomerRoutes from './routes/customer-routes';
+import EventRoutes from './routes/event-routes';
+import ProviderRoutes from './routes/provider-routes'
+import PacketRoutes from './routes/packets-routes';
 
 class Server {
 
@@ -23,8 +28,12 @@ class Server {
     }
 
     routes():void {
-        this.app.use('/login', IndexRoutes);
-        this.app.use('/new', IndexRoutes);
+        this.app.use('/', IndexRoutes);
+        this.app.use('/customer', CustomerRoutes);
+        this.app.use('/reports', ReportRoutes);
+        this.app.use('/events', EventRoutes);
+        this.app.use('/provider', ProviderRoutes);
+        this.app.use('/packet', PacketRoutes);
     }
 
     start():void {

@@ -39,87 +39,79 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var database_1 = __importDefault(require("../database"));
-var EventController = /** @class */ (function () {
-    function EventController() {
+var ReportController = /** @class */ (function () {
+    function ReportController() {
     }
-    EventController.prototype.createEvent = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("INSERT INTO evento SET ?", [req.body])];
-                    case 1:
-                        _a.sent();
-                        database_1.default.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
-                        res.json({ message: "El evento ha sido creado exitosamente" });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    EventController.prototype.getEvent = function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var evento;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id = ?", [req.params.id])];
-                    case 1:
-                        evento = _a.sent();
-                        if (evento.length > 0)
-                            return [2 /*return*/, res.json(evento[0])];
-                        res.status(404).json({ message: "No se ha encontrado el evento" });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    EventController.prototype.getEventsByCustomer = function (req, res) {
+    ReportController.prototype.getEventsDetails = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             var eventos;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_cliente = ?", [req.params.id_cliente])];
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT evento.id, evento.fecha, evento.tipo, proveedor.nombre AS 'proveedor', paquete.nombre AS 'paquete', cliente.nombre AS 'cliente' " +
+                            "FROM evento " +
+                            "JOIN proveedor ON evento.id_proveedor = proveedor.id " +
+                            "JOIN cliente ON evento.id_cliente = cliente.id " +
+                            "JOIN paquete ON evento.id_paquete = paquete.id;")];
                     case 1:
                         eventos = _a.sent();
-                        if (eventos.length > 0)
-                            res.json(eventos);
-                        else
-                            res.json({ message: "No hay eventos a mostrar" });
+                        res.json(eventos);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    EventController.prototype.getEventsByProvider = function (req, res) {
+    ReportController.prototype.getPacketsAndEventsType = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var eventos;
+            var paquetes;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_proveedor = ?", [req.params.id_proveedor])];
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT proveedor.nombre AS 'proveedor', paquete.nombre AS 'paquete', paquete.precio, evento.tipo AS 'tipo de evento'" +
+                            "FROM proveedor " +
+                            "JOIN paquete ON proveedor.id = paquete.id_proveedor " +
+                            "JOIN evento ON paquete.id = evento.id_paquete;")];
                     case 1:
-                        eventos = _a.sent();
-                        if (eventos.length > 0)
-                            res.json(eventos);
-                        else
-                            res.json({ message: "No hay eventos a mostrar" });
+                        paquetes = _a.sent();
+                        res.json(paquetes);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    EventController.prototype.updateEvent = function (req, res) {
+    ReportController.prototype.getProviderPacketsAndDisponibility = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
+            var paquetes;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("UPDATE evento SET ? WHERE id = ?", [req.body, req.params.id])];
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT paquete.id, paquete.nombre, paquete.precio, paquete.disponibilidad, proveedor.nombre AS 'proveedor'" +
+                            "FROM paquete " +
+                            "JOIN proveedor ON paquete.id_proveedor = proveedor.id;")];
                     case 1:
-                        _a.sent();
-                        res.json({ message: "El evento ha sido actualizado" });
+                        paquetes = _a.sent();
+                        res.json(paquetes);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    return EventController;
+    ReportController.prototype.getCustomerAndProvider = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var customers;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT evento.id, cliente.nombre AS 'cliente', cliente.apellidoPaterno AS 'apellido', cliente.direccion AS 'dirección del cliente', " +
+                            "proveedor.nombre AS 'proveedor', proveedor.direccion AS 'direccion del proveedor'" +
+                            "FROM evento " +
+                            "JOIN cliente ON evento.id_cliente = cliente.id " +
+                            "JOIN proveedor ON evento.id_proveedor = proveedor.id;")];
+                    case 1:
+                        customers = _a.sent();
+                        res.json(customers);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return ReportController;
 }());
-var eventController = new EventController();
-exports.default = eventController;
+var reportController = new ReportController();
+exports.default = reportController;

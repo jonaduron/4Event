@@ -10,11 +10,10 @@ var ProviderRoutes = /** @class */ (function () {
         this.router = express_1.Router();
         this.config();
     }
-    // Falta definir las rutas exactas con las que trabajará cada método
     ProviderRoutes.prototype.config = function () {
-        this.router.get('/', provider_controller_1.default.listProviders);
-        this.router.get('/:id', provider_controller_1.default.getAProvider);
-        this.router.put('/:id', provider_controller_1.default.updateProvider);
+        this.router.get('/home', provider_controller_1.default.listProviders);
+        this.router.get('/provider/details/:id', provider_controller_1.default.getAProvider);
+        this.router.put('/provider/details/:id', provider_controller_1.default.updateProvider);
     };
     return ProviderRoutes;
 }());

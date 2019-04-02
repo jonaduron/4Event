@@ -12,11 +12,11 @@ var EventRoutes = /** @class */ (function () {
     }
     // Falta definir las rutas para cada método a ejecutar
     EventRoutes.prototype.config = function () {
-        this.router.post('/:id', event_controller_1.default.createEvent);
-        this.router.get('/', event_controller_1.default.getEvent);
-        this.router.get('/:cliente_id', event_controller_1.default.getEventsByCustomer);
-        this.router.get('/:proveedor_id', event_controller_1.default.getEventsByProvider);
-        this.router.put('/:id', event_controller_1.default.updateEvent);
+        this.router.post('/events/new', event_controller_1.default.createEvent);
+        this.router.get('/events/details/:id', event_controller_1.default.getEvent);
+        this.router.get('/events/:customer_id', event_controller_1.default.getEventsByCustomer);
+        this.router.get('/:proveedor_id/', event_controller_1.default.getEventsByProvider);
+        this.router.put('/events/details/:id', event_controller_1.default.updateEvent);
     };
     return EventRoutes;
 }());

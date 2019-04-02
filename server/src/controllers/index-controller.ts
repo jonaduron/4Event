@@ -15,7 +15,7 @@ class IndexController {
     }
 
     public async createCustomer(req: Request, res: Response):Promise<void> {
-        await pool.query("INSERT INTO usuario set ?", [req.body]);
+        await pool.query("INSERT INTO cliente set ?", [req.body]);
         res.json({message: 'El usuario ha sido agregado'});
     }
 }

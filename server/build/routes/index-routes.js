@@ -8,8 +8,8 @@ var IndexRoutes = /** @class */ (function () {
         this.config();
     }
     IndexRoutes.prototype.config = function () {
-        this.router.post('/', index_controller_1.indexController.createCustomer);
-        this.router.get('/:id', index_controller_1.indexController.login);
+        this.router.post('/new', index_controller_1.indexController.createCustomer);
+        this.router.get('/login', index_controller_1.indexController.login);
     };
     return IndexRoutes;
 }());
