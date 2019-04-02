@@ -5,4 +5,5 @@ export interface evento {
     tipo: string;
     id_proveedor: number;
     id_cliente: number;
+    id_paquete: number;
 }

@@ -5,6 +5,7 @@ class EventController {
 
     public async createEvent(req: Request, res: Response):Promise<void> {
         await pool.query("INSERT INTO evento SET ?", [req.body]);
+        pool.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
         res.json({message: "El evento ha sido creado exitosamente"});
     }
 
@@ -16,7 +17,7 @@ class EventController {
     }
     
     public async getEventsByCustomer(req: Request, res: Response):Promise<any> {
-        const eventos = await pool.query("SELECT * FROM evento WHERE id_cliente = ?", [req.params.client_id]);
+        const eventos = await pool.query("SELECT * FROM evento WHERE id_cliente = ?", [req.params.id_cliente]);
         if(eventos.length > 0)
             res.json(eventos);
         else 
@@ -24,7 +25,7 @@ class EventController {
     }
 
     public async getEventsByProvider(req: Request, res: Response):Promise<any> {
-        const eventos = await pool.query("SELECT * FROM evento WHERE id_proveedor = ?", [req.params.proveedor_id]);
+        const eventos = await pool.query("SELECT * FROM evento WHERE id_proveedor = ?", [req.params.id_proveedor]);
         if(eventos.length > 0)
             res.json(eventos);
         else 

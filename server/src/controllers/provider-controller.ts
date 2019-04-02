@@ -4,12 +4,12 @@ import pool from '../database';
 class ProvidersController {
 
     public async listProviders(req: Request, res: Response) {
-        const providers = await pool.query("SELECT * FROM usuario;");
+        const providers = await pool.query("SELECT * FROM proveedor;");
         res.json(providers);
     }
 
     public async getAProvider(req: Request, res: Response) {
-        const providers = await pool.query("SELECT * FROM usuario WHERE id = ?", [req.params.id]);
+        const providers = await pool.query("SELECT * FROM proveedor WHERE id = ?", [req.params.id]);
         if(providers.length > 0) {
             return res.json(providers[0]);
         }
@@ -17,7 +17,7 @@ class ProvidersController {
     }
 
     public updateProvider(req: Request, res: Response) {
-        pool.query("UPDATE usuario SET ? WHERE id = ?", [req.body, req.params.id]);
+        pool.query("UPDATE proveedor SET ? WHERE id = ?", [req.body, req.params.id]);
         res.json({message: 'Provider has been updated'});
     }
 }

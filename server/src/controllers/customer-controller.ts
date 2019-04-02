@@ -4,7 +4,7 @@ import pool from '../database';
 class CustomerController {
 
     public async getCustomer(req: Request, res: Response):Promise<any> {
-        const customers = await pool.query("SELECT * FROM usuario WHERE id = ?", [req.params.id]);
+        const customers = await pool.query("SELECT * FROM cliente WHERE id = ?", [req.params.id]);
         if(customers.length > 0) {
             return res.json(customers[0]);
         }
@@ -12,12 +12,12 @@ class CustomerController {
     }
 
     public async updateCustomer(req: Request, res: Response):Promise<void> {
-        await pool.query("UPDATE usuario SET ? WHERE id = ?", [req.body, req.params.id]);
+        await pool.query("UPDATE cliente SET ? WHERE id = ?", [req.body, req.params.id]);
         res.json({message: "The user has been updated"});
     }
 
     public async deleteCustomer(req: Request, res: Response):Promise<void> {
-        await pool.query("DELETE FROM usuario WHERE id = ?", [req.params.id]);
+        await pool.query("DELETE FROM cliente WHERE id = ?", [req.params.id]);
         res.json({message: "The user has been deleted succesfully"});
     }
 }
