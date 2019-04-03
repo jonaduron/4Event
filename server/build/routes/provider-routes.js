@@ -11,9 +11,9 @@ var ProviderRoutes = /** @class */ (function () {
         this.config();
     }
     ProviderRoutes.prototype.config = function () {
-        this.router.get('/home', provider_controller_1.default.listProviders);
-        this.router.get('/provider/details/:id', provider_controller_1.default.getAProvider);
-        this.router.put('/provider/details/:id', provider_controller_1.default.updateProvider);
+        this.router.get('/', provider_controller_1.default.listProviders);
+        this.router.get('/details/:id', provider_controller_1.default.getAProvider);
+        this.router.put('/details/:id', provider_controller_1.default.updateProvider);
     };
     return ProviderRoutes;
 }());

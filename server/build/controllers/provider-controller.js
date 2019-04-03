@@ -58,14 +58,16 @@ var ProvidersController = /** @class */ (function () {
     };
     ProvidersController.prototype.getAProvider = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var providers;
+            var id, providers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM proveedor WHERE id = ?", [req.params.id])];
+                    case 0:
+                        id = req.params.id;
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM proveedor WHERE id = ?", [id])];
                     case 1:
                         providers = _a.sent();
                         if (providers.length > 0) {
-                            return [2 /*return*/, res.json(providers[0])];
+                            return [2 /*return*/, res.json(providers)];
                         }
                         res.status(404).json({ text: "The provider does not exist" });
                         return [2 /*return*/];
@@ -74,7 +76,8 @@ var ProvidersController = /** @class */ (function () {
         });
     };
     ProvidersController.prototype.updateProvider = function (req, res) {
-        database_1.default.query("UPDATE proveedor SET ? WHERE id = ?", [req.body, req.params.id]);
+        var id = req.params.id;
+        database_1.default.query("UPDATE proveedor SET ? WHERE id = ?", [req.body, id]);
         res.json({ message: 'Provider has been updated' });
     };
     return ProvidersController;

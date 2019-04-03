@@ -29,11 +29,11 @@ class Server {
 
     routes():void {
         this.app.use('/', IndexRoutes);
-        this.app.use('/customer', CustomerRoutes);
+        this.app.use('/customers', CustomerRoutes);
         this.app.use('/reports', ReportRoutes);
         this.app.use('/events', EventRoutes);
-        this.app.use('/provider', ProviderRoutes);
-        this.app.use('/packet', PacketRoutes);
+        this.app.use('/providers', ProviderRoutes);
+        this.app.use('/packets', PacketRoutes);
     }
 
     start():void {

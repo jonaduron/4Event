@@ -44,10 +44,12 @@ var PacketController = /** @class */ (function () {
     }
     PacketController.prototype.getPacket = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var packet;
+            var id, packet;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM paquete WHERE id = ?", [req.params.id])];
+                    case 0:
+                        id = req.params.id;
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM paquete WHERE id = ?", [id])];
                     case 1:
                         packet = _a.sent();
                         res.json(packet);
@@ -58,10 +60,12 @@ var PacketController = /** @class */ (function () {
     };
     PacketController.prototype.getPacketsByProvider = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var paquetes;
+            var id_proveedor, paquetes;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM paquete WHERE id_proveedor = ?", [req.params.proveedor_id])];
+                    case 0:
+                        id_proveedor = req.params.id_proveedor;
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM paquete WHERE id_proveedor = ?", [id_proveedor])];
                     case 1:
                         paquetes = _a.sent();
                         if (paquetes.length > 0) {
@@ -89,8 +93,10 @@ var PacketController = /** @class */ (function () {
     };
     PacketController.prototype.deletePacket = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
+            var id;
             return __generator(this, function (_a) {
-                database_1.default.query("DELETE FROM paquete WHERE id = ?", [req.params.id]);
+                id = req.params.id;
+                database_1.default.query("DELETE FROM paquete WHERE id = ?", [id]);
                 res.json({ message: "El paquete ha sido eliminado" });
                 return [2 /*return*/];
             });
@@ -98,8 +104,10 @@ var PacketController = /** @class */ (function () {
     };
     PacketController.prototype.updatePacket = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
+            var id;
             return __generator(this, function (_a) {
-                database_1.default.query("UPDATE paquete SET ? WHERE id = ?", [req.body, req.params.id]);
+                id = req.params.id;
+                database_1.default.query("UPDATE paquete SET ? WHERE id = ?", [req.body, id]);
                 res.json({ message: "El paquete ha sido actualizado" });
                 return [2 /*return*/];
             });

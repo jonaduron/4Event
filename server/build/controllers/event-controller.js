@@ -45,14 +45,10 @@ var EventController = /** @class */ (function () {
     EventController.prototype.createEvent = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("INSERT INTO evento SET ?", [req.body])];
-                    case 1:
-                        _a.sent();
-                        database_1.default.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
-                        res.json({ message: "El evento ha sido creado exitosamente" });
-                        return [2 /*return*/];
-                }
+                //await pool.query("INSERT INTO evento SET ?", [req.body]);
+                //pool.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
+                res.json({ message: "El evento ha sido creado exitosamente" });
+                return [2 /*return*/];
             });
         });
     };
@@ -65,7 +61,7 @@ var EventController = /** @class */ (function () {
                     case 1:
                         evento = _a.sent();
                         if (evento.length > 0)
-                            return [2 /*return*/, res.json(evento[0])];
+                            return [2 /*return*/, res.json(evento)];
                         res.status(404).json({ message: "No se ha encontrado el evento" });
                         return [2 /*return*/];
                 }
@@ -74,16 +70,17 @@ var EventController = /** @class */ (function () {
     };
     EventController.prototype.getEventsByCustomer = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var eventos;
+            var id_cliente, eventos;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_cliente = ?", [req.params.id_cliente])];
+                    case 0:
+                        id_cliente = req.params.id_cliente;
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_cliente = ?", [id_cliente])];
                     case 1:
                         eventos = _a.sent();
                         if (eventos.length > 0)
-                            res.json(eventos);
-                        else
-                            res.json({ message: "No hay eventos a mostrar" });
+                            return [2 /*return*/, res.json(eventos)];
+                        res.json({ message: "No hay eventos a mostrar" });
                         return [2 /*return*/];
                 }
             });
@@ -91,16 +88,19 @@ var EventController = /** @class */ (function () {
     };
     EventController.prototype.getEventsByProvider = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var eventos;
+            var id_proveedor, eventos;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_proveedor = ?", [req.params.id_proveedor])];
+                    case 0:
+                        id_proveedor = req.params.id_proveedor;
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM evento WHERE id_proveedor = ?", [id_proveedor])];
                     case 1:
                         eventos = _a.sent();
                         if (eventos.length > 0)
                             res.json(eventos);
                         else
                             res.json({ message: "No hay eventos a mostrar" });
+                        res.json({ message: "Got events by provider" });
                         return [2 /*return*/];
                 }
             });

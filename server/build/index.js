@@ -27,11 +27,11 @@ var Server = /** @class */ (function () {
     };
     Server.prototype.routes = function () {
         this.app.use('/', index_routes_1.default);
-        this.app.use('/customer', customer_routes_1.default);
+        this.app.use('/customers', customer_routes_1.default);
         this.app.use('/reports', report_routes_1.default);
         this.app.use('/events', event_routes_1.default);
-        this.app.use('/provider', provider_routes_1.default);
-        this.app.use('/packet', packets_routes_1.default);
+        this.app.use('/providers', provider_routes_1.default);
+        this.app.use('/packets', packets_routes_1.default);
     };
     Server.prototype.start = function () {
         var _this = this;

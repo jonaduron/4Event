@@ -4,8 +4,8 @@ import pool from '../database';
 class IndexController {
     
     public async login(req: Request, res: Response):Promise<any> {
-        const valores = await pool.query('SELECT usuario, contrasena FROM login WHERE usuario = ?', 
-            [req.params.usuario, req.params.contrasena]);
+        const { usuario } = req.params;
+        const valores = await pool.query('SELECT usuario, contrasena FROM login WHERE usuario = ?', [usuario]);
         if(valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {
             return true;
         }

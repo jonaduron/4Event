@@ -44,10 +44,12 @@ var IndexController = /** @class */ (function () {
     }
     IndexController.prototype.login = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var valores;
+            var usuario, valores;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query('SELECT usuario, contrasena FROM login WHERE usuario = ?', [req.params.usuario, req.params.contrasena])];
+                    case 0:
+                        usuario = req.params.usuario;
+                        return [4 /*yield*/, database_1.default.query('SELECT usuario, contrasena FROM login WHERE usuario = ?', [usuario])];
                     case 1:
                         valores = _a.sent();
                         if (valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {

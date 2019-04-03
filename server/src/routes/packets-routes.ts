@@ -10,11 +10,11 @@ class PacketRoutes {
     }
 
     config():void {
-        this.router.get('/packets/details/:id', packetController.getPacket);
-        this.router.get('/packets/:proveedor_id', packetController.getPacketsByProvider);
-        this.router.post('/packets/new', packetController.createPacket);
-        this.router.put('/packets/details/:id', packetController.updatePacket);
-        this.router.delete('/packets/details/:id', packetController.deletePacket);
+        this.router.get('/details/:id', packetController.getPacket);
+        this.router.get('/provider/:id_proveedor', packetController.getPacketsByProvider);
+        this.router.post('/new', packetController.createPacket);
+        this.router.put('/details/:id', packetController.updatePacket);
+        this.router.delete('/details/:id', packetController.deletePacket);
     }
 }
 

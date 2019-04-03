@@ -8,13 +8,12 @@ class EventRoutes {
         this.config();
     }
 
-    // Falta definir las rutas para cada método a ejecutar
     config():void {
         this.router.post('/new', eventController.createEvent);
-        this.router.get('/:id', eventController.getEvent);
-        this.router.get('/events/:customer_id', eventController.getEventsByCustomer);
-        this.router.get('/:proveedor_id/', eventController.getEventsByProvider);
-        this.router.put('/events/details/:id', eventController.updateEvent);
+        this.router.get('/details/:id', eventController.getEvent);
+        this.router.get('/customer/:id_cliente', eventController.getEventsByCustomer);
+        this.router.get('/provider/:id_proveedor/', eventController.getEventsByProvider);
+        this.router.put('/details/:id', eventController.updateEvent);
     }
 }
 

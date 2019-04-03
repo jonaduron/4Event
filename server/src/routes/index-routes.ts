@@ -11,7 +11,7 @@ export class IndexRoutes {
 
     config():void {
         this.router.post('/new', indexController.createCustomer);
-        this.router.get('/login', indexController.login);
+        this.router.get('/login:/usuario', indexController.login);
     }
 }
 

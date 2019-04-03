@@ -10,9 +10,9 @@ class ProviderRoutes {
     }
 
     config():void {
-        this.router.get('/home', providersController.listProviders);
-        this.router.get('/provider/details/:id', providersController.getAProvider);
-        this.router.put('/provider/details/:id', providersController.updateProvider);
+        this.router.get('/', providersController.listProviders);
+        this.router.get('/details/:id', providersController.getAProvider);
+        this.router.put('/details/:id', providersController.updateProvider);
     }
 }
 

@@ -4,12 +4,14 @@ import pool from  '../database';
 class PacketController {
 
     public async getPacket(req: Request, res: Response):Promise<any> {
-        const packet = await pool.query("SELECT * FROM paquete WHERE id = ?", [req.params.id]);
+        const { id } = req.params;
+        const packet = await pool.query("SELECT * FROM paquete WHERE id = ?", [id]);
         res.json(packet);
     }
 
     public async getPacketsByProvider(req: Request, res: Response):Promise<any> {
-        const paquetes = await pool.query("SELECT * FROM paquete WHERE id_proveedor = ?", [req.params.proveedor_id]);
+        const { id_proveedor } = req.params;
+        const paquetes = await pool.query("SELECT * FROM paquete WHERE id_proveedor = ?", [id_proveedor]);
         if(paquetes.length > 0) {
             res.json(paquetes);
         }
@@ -23,12 +25,14 @@ class PacketController {
     }
 
     public async deletePacket(req: Request, res: Response):Promise<void> {
-        pool.query("DELETE FROM paquete WHERE id = ?", [req.params.id]);
+        const { id } = req.params;
+        pool.query("DELETE FROM paquete WHERE id = ?", [id]);
         res.json({message: "El paquete ha sido eliminado"});
     }
 
     public async updatePacket(req: Request, res: Response):Promise<void> {
-        pool.query("UPDATE paquete SET ? WHERE id = ?", [req.body, req.params.id]);
+        const { id } = req.params;
+        pool.query("UPDATE paquete SET ? WHERE id = ?", [req.body, id]);
         res.json({message: "El paquete ha sido actualizado"});
     }
 }
