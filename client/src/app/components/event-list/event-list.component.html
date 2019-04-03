@@ -1,7 +1,8 @@
 <div class="col-md-4" *ngFor="let evento of events">
   <div class="card text-center">
     <div class="card-header d-flex justify-content-between align-items-center">
-      {{evento.fecha}}
+      <h5>Fecha:</h5> <h5>{{evento.fecha}}</h5>
+      <h3>Id:</h3><h5> {{evento.id}} </h5>
     </div>
     <div class="card-body">
       {{evento.tipo}}

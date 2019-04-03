@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { EventoServiceService } from '../app/services/evento/evento-service.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PacketsandeventsComponent } from './components/packetsandevents/packetsandevents.component';
+import { PacketandeventServiceService }from './services/packetandevent/packetandevent-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventListComponent,
-    NavbarComponent
+    NavbarComponent,
+    PacketsandeventsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule
   ],
   providers: [
-    EventoServiceService
+    EventoServiceService,
+    PacketandeventServiceService
   ],
   bootstrap: [AppComponent]
 })
