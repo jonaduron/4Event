@@ -1,0 +1,13 @@
+<div class="col-md-4" *ngFor="let evento of events">
+  <div class="card text-center">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      {{evento.fecha}}
+    </div>
+    <div class="card-body">
+      {{evento.tipo}}
+      <a href="" class="btn btn-info btn-block">
+        EDIT EVENT
+      </a>
+    </div>
+  </div>
+</div>

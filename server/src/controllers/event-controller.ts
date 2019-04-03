@@ -12,7 +12,7 @@ class EventController {
     public async getEvent(req: Request, res: Response):Promise<any> {
         const evento = await pool.query("SELECT * FROM evento WHERE id = ?", [req.params.id]);
         if(evento.length > 0)
-            return res.json(evento[0]);
+            return res.json(evento);
         res.status(404).json({message: "No se ha encontrado el evento"});
     }
     
