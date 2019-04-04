@@ -7,7 +7,7 @@ import {paquete} from '../../models/paquete';
   providedIn: 'root'
 })
 export class PaqueteServiceService {
-
+  
   API_URI='http://localhost:3000';
   constructor(private Http:HttpClient) { }
   getEvents(){
@@ -15,6 +15,9 @@ export class PaqueteServiceService {
   }
   newPacket(pac:paquete){
     return this.Http.post(`${this.API_URI}/packets/new`,pac);
+  }
+  buscarPacket(id:string){
+    return this.Http.get(`${this.API_URI}/packets/details/${id}`);
   }
 
 }

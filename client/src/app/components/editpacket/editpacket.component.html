@@ -1,0 +1,28 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card bg-info">
+        <div class="card-header">
+            <h5>¿Que paquete desea editar?</h5>
+          </div>
+            <div class="card-body">
+              <input type="text" name="byid" [(ngModel)]="pack.id" placeholder="Id paquete">      
+          </div>
+          <div class="card-header ">
+            <button class="btn btn-success" (click)="getPacketById()" class="form-control">Buscar</button>
+          </div>
+    </div>
+    
+    
+</div>
+<div class="col-md-4">
+    <div class="card bg-info">
+        <div class="card-header">
+      <h5>paquete encontrado</h5>
+        </div>
+        <div class="card-body">
+<p>Nombre: {{twopac.nombre}}</p>
+<p>Precio: {{twopac.Precio}}</p>
+<p>Disponibilidad: {{pack.name}}</p>
+<p>Descripcion: {{pack.name}}</p>
+        </div>
+      </div>
+</div>

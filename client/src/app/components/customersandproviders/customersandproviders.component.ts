@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { customersandproviders }from '../../models/customersandproviders'; 
 import { customersandprovidesServiceService } from '../../services/customersandprovides/customersandprovides-service.service';
 
@@ -8,6 +8,7 @@ import { customersandprovidesServiceService } from '../../services/customersandp
   styleUrls: ['./customersandproviders.component.css']
 })
 export class CustomersandprovidersComponent implements OnInit {
+  @HostBinding('class')classes='row';
   customersandprovides:any=[];
   constructor(private customersandprovidesServiceService:customersandprovidesServiceService) { }
 
