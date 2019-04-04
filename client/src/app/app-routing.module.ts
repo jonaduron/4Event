@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EventListComponent } from '../app/components/event-list/event-list.component';
 import { PacketsandeventsComponent } from '../app/components/packetsandevents/packetsandevents.component';
-import {PacketsdetailsComponent} from '../app/components/packetsdetails/packetsdetails.component';
-import { CustomersandprovidersComponent} from '../app/components/customersandproviders/customersandproviders.component';
+import { PacketsdetailsComponent } from '../app/components/packetsdetails/packetsdetails.component';
+import { CustomersandprovidersComponent } from '../app/components/customersandproviders/customersandproviders.component';
+import { NewformpacketComponent } from '../app/components/newformpacket/newformpacket.component';
+
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/packetsandevents',
+    redirectTo:'/events',
     pathMatch:'full'
   },
   {
@@ -25,6 +27,10 @@ const routes: Routes = [
   {
     path:'customerandproviders',
     component:CustomersandprovidersComponent
+  },
+  {
+    path:'newpacket',
+    component:NewformpacketComponent
   }
 
 ];
