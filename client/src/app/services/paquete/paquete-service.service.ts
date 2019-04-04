@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {paquete} from '../../models/paquete';
 
-import { packetandevent } from '../../models/packetandevent';
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +13,8 @@ export class PaqueteServiceService {
   getEvents(){
     return this.Http.get(`${this.API_URI}`);
   }
+  newPacket(pac:paquete){
+    return this.Http.post(`${this.API_URI}/packets/new`,pac);
+  }
+
 }

@@ -16,7 +16,7 @@
             <input type="text" name="descripcion" [(ngModel)]="pac.descripcion" placeholder="descripcion" class="form-control">
           </div>
         
-          <button class="btn btn-success btn-block" >
+          <button class="btn btn-success btn-block" (click)="newpackets()">
             Save
           </button>
         
@@ -27,9 +27,10 @@
   
   <div class="col-md-4">
     <div class="card card-body text-center">
-      <p>{{ pac.id}}</p>
-      <p>{{ pac.nombre}}</p>
-      <p>{{ pac.precio}}</p>
-      <p>{{ pac.descripcion}}</p>
+      <p>ID: {{ pac.id}}</p>
+      <p>Nombre: {{ pac.nombre}}</p>
+      <p>Precio: {{ pac.precio}}</p>
+      <p>Disponibilidad: {{ pac.disponibilidad}}</p>
+      <p>Descripcion: {{ pac.descripcion}}</p>
     </div>
   </div>

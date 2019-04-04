@@ -15,14 +15,21 @@ export class NewformpacketComponent implements OnInit {
     precio: 0,
     disponibilidad: 0,
     descripcion: '',
-    id_proveedor: 0
+    id_proveedor: 1000001
   };
   constructor(private paqueteServiceService:PaqueteServiceService) { }
 
   ngOnInit() {
   }
   newpackets(){
-    console.log(this.pac)
+    // delete this.pac.id_proveedor;
+    delete this.pac.id;
+    this.paqueteServiceService.newPacket(this.pac).subscribe(
+      res=> {
+        console.log(res)
+
+      },err=> console.error(err)
+    )
   }
 
 }
