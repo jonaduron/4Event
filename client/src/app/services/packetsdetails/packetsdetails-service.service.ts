@@ -13,4 +13,8 @@ export class PacketsdetailsServiceService {
   getpacketsdetails(){
     return this.http.get(`${this.API_URI}/reports/packetsdetails`);
   }
+
+  deletePacket(id:String){
+   return this.http.delete(`${this.API_URI}/packets/details/${id}`);
+  }
 }

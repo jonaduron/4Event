@@ -7,7 +7,7 @@ import { CustomersandprovidersComponent} from '../app/components/customersandpro
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/customerandproviders',
+    redirectTo:'/packetsandevents',
     pathMatch:'full'
   },
   {
