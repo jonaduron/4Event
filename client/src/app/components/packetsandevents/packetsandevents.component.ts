@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { packetandevent } from '../../models/packetandevent';
 import { PacketandeventServiceService }from '../../services/packetandevent/packetandevent-service.service';
 @Component({
@@ -7,6 +7,7 @@ import { PacketandeventServiceService }from '../../services/packetandevent/packe
   styleUrls: ['./packetsandevents.component.css']
 })
 export class PacketsandeventsComponent implements OnInit {
+  @HostBinding('class')classes='row';
   packetsandevents:any = [];
   constructor(private packetandeventServiceService:PacketandeventServiceService) { }
 
@@ -15,6 +16,7 @@ export class PacketsandeventsComponent implements OnInit {
 
       res => {
         this.packetsandevents = res;
+        console.log(res)
       },
       err => console.error(err)
     );

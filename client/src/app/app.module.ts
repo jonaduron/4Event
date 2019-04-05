@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,10 +10,13 @@ import { EventoServiceService } from '../app/services/evento/evento-service.serv
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PacketsandeventsComponent } from './components/packetsandevents/packetsandevents.component';
 import { PacketandeventServiceService }from './services/packetandevent/packetandevent-service.service';
-import {PacketsdetailsServiceService} from '../app/services/packetsdetails/packetsdetails-service.service';
+import { PacketsdetailsServiceService} from '../app/services/packetsdetails/packetsdetails-service.service';
 import { PacketsdetailsComponent } from './components/packetsdetails/packetsdetails.component';
 import { CustomersandprovidersComponent } from './components/customersandproviders/customersandproviders.component';
 import { customersandprovidesServiceService }from './services/customersandprovides/customersandprovides-service.service';
+import { NewformpacketComponent } from './components/newformpacket/newformpacket.component';
+import { EditpacketComponent } from './components/editpacket/editpacket.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +24,15 @@ import { customersandprovidesServiceService }from './services/customersandprovid
     NavbarComponent,
     PacketsandeventsComponent,
     PacketsdetailsComponent,
-    CustomersandprovidersComponent
+    CustomersandprovidersComponent,
+    NewformpacketComponent,
+    EditpacketComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     EventoServiceService,

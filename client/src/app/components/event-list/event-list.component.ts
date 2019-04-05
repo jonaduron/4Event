@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { EventoServiceService } from '../../services/evento/evento-service.service';
 import { evento } from 'src/app/models/evento';
 
@@ -8,7 +8,7 @@ import { evento } from 'src/app/models/evento';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-
+@HostBinding('class')classes='row';
   events:any = [];
   constructor(private eventoServiceService: EventoServiceService) { }
 
