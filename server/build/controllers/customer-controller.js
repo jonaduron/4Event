@@ -49,7 +49,7 @@ var CustomerController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = req.params.id;
-                        return [4 /*yield*/, database_1.default.query("SELECT * FROM cliente WHERE id = ?", [id])];
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM usuario WHERE id = ?", [id])];
                     case 1:
                         customers = _a.sent();
                         if (customers.length > 0) {
@@ -68,7 +68,7 @@ var CustomerController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = req.params.id;
-                        return [4 /*yield*/, database_1.default.query("UPDATE cliente SET ? WHERE id = ?", [req.body, id])];
+                        return [4 /*yield*/, database_1.default.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id])];
                     case 1:
                         _a.sent();
                         res.json({ message: "The user has been updated" });
@@ -84,7 +84,7 @@ var CustomerController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = req.params.id;
-                        return [4 /*yield*/, database_1.default.query("DELETE FROM cliente WHERE id = ?", [id])];
+                        return [4 /*yield*/, database_1.default.query("DELETE FROM usuario WHERE id = ?", [id])];
                     case 1:
                         _a.sent();
                         res.json({ message: "The user has been deleted succesfully" });

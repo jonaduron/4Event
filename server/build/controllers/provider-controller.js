@@ -47,7 +47,7 @@ var ProvidersController = /** @class */ (function () {
             var providers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM proveedor;")];
+                    case 0: return [4 /*yield*/, database_1.default.query("SELECT * FROM usuario WHERE esProveedor = true;")];
                     case 1:
                         providers = _a.sent();
                         res.json(providers);
@@ -63,7 +63,7 @@ var ProvidersController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = req.params.id;
-                        return [4 /*yield*/, database_1.default.query("SELECT * FROM proveedor WHERE id = ?", [id])];
+                        return [4 /*yield*/, database_1.default.query("SELECT * FROM usuario WHERE id = ?", [id])];
                     case 1:
                         providers = _a.sent();
                         if (providers.length > 0) {
@@ -77,7 +77,7 @@ var ProvidersController = /** @class */ (function () {
     };
     ProvidersController.prototype.updateProvider = function (req, res) {
         var id = req.params.id;
-        database_1.default.query("UPDATE proveedor SET ? WHERE id = ?", [req.body, id]);
+        database_1.default.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id]);
         res.json({ message: 'Provider has been updated' });
     };
     return ProvidersController;
