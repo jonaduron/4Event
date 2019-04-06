@@ -4,8 +4,8 @@ import pool from '../database';
 class EventController {
 
     public async createEvent(req: Request, res: Response):Promise<void> {
-        //await pool.query("INSERT INTO evento SET ?", [req.body]);
-        //pool.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
+        await pool.query("INSERT INTO evento SET ?", [req.body]);
+        pool.query("UPDATE paquete SET disponibilidad = disponibilidad - 1 WHERE id = ?", [req.params.id_paquete]);
         res.json({message: "El evento ha sido creado exitosamente"});
     }
 
