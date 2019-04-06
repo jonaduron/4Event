@@ -16,6 +16,7 @@ import { CustomersandprovidersComponent } from './components/customersandprovide
 import { customersandprovidesServiceService }from './services/customersandprovides/customersandprovides-service.service';
 import { NewformpacketComponent } from './components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from './components/editpacket/editpacket.component';
+import { CustomerByIdComponent } from './components/customer-by-id/customer-by-id.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditpacketComponent } from './components/editpacket/editpacket.componen
     PacketsdetailsComponent,
     CustomersandprovidersComponent,
     NewformpacketComponent,
-    EditpacketComponent
+    EditpacketComponent,
+    CustomerByIdComponent
   ],
   imports: [
     BrowserModule,

@@ -6,11 +6,12 @@ import { PacketsdetailsComponent } from '../app/components/packetsdetails/packet
 import { CustomersandprovidersComponent } from '../app/components/customersandproviders/customersandproviders.component';
 import { NewformpacketComponent } from '../app/components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from '../app/components/editpacket/editpacket.component';
+import { CustomerByIdComponent } from '../app/components/customer-by-id/customer-by-id.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/packetsandevents',
+    redirectTo:'/customerById',
     pathMatch:'full'
   },
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path:'editpacket',
     component:EditpacketComponent
+  },
+  {
+    path:'customerById',
+    component:CustomerByIdComponent
+
   }
 
 ];
