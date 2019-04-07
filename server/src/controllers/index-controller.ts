@@ -5,13 +5,14 @@ class IndexController {
     
     public async login(req: Request, res: Response):Promise<any> {
         const { usuario } = req.params;
-        const valores = await pool.query('SELECT usuario, contrasena FROM usuario WHERE id = ?', [usuario]);
-        if(valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        const valores = await pool.query('SELECT contrasena FROM usuario WHERE usuario = "?"', [usuario]);
+        // if(valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {
+        //     return true;
+        // }
+        // else {
+        //     return false;
+        // }
+        res.json(valores);
     }
 
     public async createCustomer(req: Request, res: Response):Promise<void> {

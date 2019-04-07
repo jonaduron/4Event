@@ -6,12 +6,13 @@ import { PacketsdetailsComponent } from '../app/components/packetsdetails/packet
 import { CustomersandprovidersComponent } from '../app/components/customersandproviders/customersandproviders.component';
 import { NewformpacketComponent } from '../app/components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from '../app/components/editpacket/editpacket.component';
-import { CustomerByIdComponent } from '../app/components/customer-by-id/customer-by-id.component';
+import { LogInComponent } from '../app/components/log-in/log-in.component';
+
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/customerById',
+    redirectTo:'/logIn',
     pathMatch:'full'
   },
   {
@@ -39,10 +40,10 @@ const routes: Routes = [
     component:EditpacketComponent
   },
   {
-    path:'customerById',
-    component:CustomerByIdComponent
-
+    path:'logIn',
+    component:LogInComponent
   }
+  
 
 ];
 

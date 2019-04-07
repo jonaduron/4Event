@@ -11,7 +11,7 @@ class ReportRoutes {
 
     config():void {
         this.router.get('/eventsdetails', reportController.getEventsDetails);
-        this.router.get('/packetandevents', reportController.getPacketsAndEventsType);
+        this.router.get('/packetsandevents', reportController.getPacketsAndEventsType);
         this.router.get('/packetsdetails', reportController.getProviderPacketsAndDisponibility);
         this.router.get('/customersandproviders', reportController.getCustomerAndProvider);
     }

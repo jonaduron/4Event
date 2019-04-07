@@ -28,7 +28,7 @@ class Server {
     }
 
     routes():void {
-        this.app.use('/', IndexRoutes);
+        this.app.use('/log', IndexRoutes);
         this.app.use('/customers', CustomerRoutes);
         this.app.use('/reports', ReportRoutes);
         this.app.use('/events', EventRoutes);

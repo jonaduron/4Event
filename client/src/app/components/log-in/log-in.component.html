@@ -1,0 +1,14 @@
+<div class="col-sm-3 col-md-4 col-xs-6">
+  <div class="card text-center">
+    <div class="card-header bg-info">
+      <h3>LogIn</h3>
+    </div>
+    <div class="card-body">
+      <input type="text" [(ngModel)]="user.usuario" placeholder="Usuario">
+      <input type="password" [(ngModel)]="user.contrasena" placeholder="Contraseña">
+    </div>
+    <div class="car-header">
+      <button class="btn btn-dark btn-lg" (click)="getLog()">Send</button>
+    </div>
+  </div>
+</div>
