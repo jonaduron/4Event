@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -w",
+    "build": "tsc -W",
     "dev": "nodemon build/index.js"
   },
   "author": "",

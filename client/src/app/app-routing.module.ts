@@ -7,6 +7,7 @@ import { CustomersandprovidersComponent } from '../app/components/customersandpr
 import { NewformpacketComponent } from '../app/components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from '../app/components/editpacket/editpacket.component';
 import { LogInComponent } from '../app/components/log-in/log-in.component';
+import { NewEventComponent} from '../app/components/new-event/new-event.component'
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path:'logIn',
     component:LogInComponent
+  },
+  {
+    path:'newEvent',
+    component:NewEventComponent
   }
   
 

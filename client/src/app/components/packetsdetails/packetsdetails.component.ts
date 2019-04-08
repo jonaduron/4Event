@@ -1,5 +1,4 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { packetsdetails } from '../../models/packetsdetails';
 import { PacketsdetailsServiceService } from '../../services/packetsdetails/packetsdetails-service.service';
 
 
@@ -21,6 +20,7 @@ packetdetails: any =[];
     this.packetsdetailsServiceService.getpacketsdetails().subscribe(
       res => {
         this.packetdetails=res;
+        console.log(res)
       },err=> console.error(err)
           );
   }
@@ -28,10 +28,11 @@ packetdetails: any =[];
     this.packetsdetailsServiceService.deletePacket(id).subscribe(
 res =>{
   console.log(res)
-  this.getpackets()
+ 
 },
 err => console.error(err)
     )
+    
   }
 
 }

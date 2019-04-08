@@ -5,7 +5,7 @@ class IndexController {
     
     public async login(req: Request, res: Response):Promise<any> {
         const { usuario } = req.params;
-        const valores = await pool.query('SELECT contrasena FROM usuario WHERE usuario = "?"', [usuario]);
+        const valores = await pool.query('SELECT esProveedor,contrasena FROM usuario WHERE usuario = ?', [usuario]);
         // if(valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {
         //     return true;
         // }

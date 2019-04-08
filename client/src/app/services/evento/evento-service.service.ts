@@ -14,5 +14,8 @@ export class EventoServiceService {
   getEvents(){
     return this.http.get(`${this.API_URI}/reports/eventsdetails`);
   }
+  newEvent(eve:evento){
+    return this.http.post(`${this.API_URI}/events/new`,eve);
+  }
 }
  

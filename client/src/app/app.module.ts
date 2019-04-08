@@ -17,6 +17,7 @@ import { customersandprovidesServiceService }from './services/customersandprovid
 import { NewformpacketComponent } from './components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from './components/editpacket/editpacket.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { NewEventComponent } from './components/new-event/new-event.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
     CustomersandprovidersComponent,
     NewformpacketComponent,
     EditpacketComponent,
-    LogInComponent
+    LogInComponent,
+    NewEventComponent
    
   ],
   imports: [

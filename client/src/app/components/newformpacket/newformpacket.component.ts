@@ -15,7 +15,7 @@ export class NewformpacketComponent implements OnInit {
     precio: 0,
     disponibilidad: 0,
     descripcion: '',
-    id_proveedor: 1000001
+    id_proveedor: 1003
   };
   constructor(private paqueteServiceService:PaqueteServiceService) { }
 
