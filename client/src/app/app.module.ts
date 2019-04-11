@@ -18,6 +18,7 @@ import { NewformpacketComponent } from './components/newformpacket/newformpacket
 import { EditpacketComponent } from './components/editpacket/editpacket.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewEventComponent } from './components/new-event/new-event.component';
     NewformpacketComponent,
     EditpacketComponent,
     LogInComponent,
-    NewEventComponent
+    NewEventComponent,
+    UserComponent
    
   ],
   imports: [

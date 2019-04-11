@@ -7,13 +7,14 @@ import { CustomersandprovidersComponent } from '../app/components/customersandpr
 import { NewformpacketComponent } from '../app/components/newformpacket/newformpacket.component';
 import { EditpacketComponent } from '../app/components/editpacket/editpacket.component';
 import { LogInComponent } from '../app/components/log-in/log-in.component';
-import { NewEventComponent} from '../app/components/new-event/new-event.component'
+import { NewEventComponent} from '../app/components/new-event/new-event.component';
+import { UserComponent} from '../app/components/user/user.component'; 
 
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/logIn',
+    redirectTo:'/user',
     pathMatch:'full'
   },
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path:'newEvent',
     component:NewEventComponent
+  },
+  {
+    path:'user',
+    component:UserComponent
+
   }
   
 

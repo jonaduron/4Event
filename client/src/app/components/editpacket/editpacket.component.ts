@@ -20,9 +20,11 @@ pack:paquete={
   id_proveedor: 1002
 };
   constructor(private paqueteServiceService:PaqueteServiceService) { }
-ById:string;
+ 
   ngOnInit() {
+
   }
+
   getPacketById(){
 this.paqueteServiceService.buscarPacket(String(this.pack.id)).subscribe(
   res => {
