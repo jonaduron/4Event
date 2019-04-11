@@ -9,7 +9,7 @@ import { EditpacketComponent } from '../app/components/editpacket/editpacket.com
 import { LogInComponent } from '../app/components/log-in/log-in.component';
 import { NewEventComponent} from '../app/components/new-event/new-event.component';
 import { UserComponent} from '../app/components/user/user.component'; 
-
+import { NewCustomerComponent } from '../app/components/new-customer/new-customer.component';
 
 const routes: Routes = [
   {
@@ -34,28 +34,33 @@ const routes: Routes = [
     component:CustomersandprovidersComponent
   },
   {
-    path:'newpacket',
+    path:'packet/new',
     component:NewformpacketComponent
   },
   {
-    path:'editpacket',
+    path:'packet/edit',
     component:EditpacketComponent
   },
   {
-    path:'logIn',
+    path:'login',
     component:LogInComponent
   },
   {
-    path:'newEvent',
+    path:'event/new',
     component:NewEventComponent
   },
   {
     path:'user',
     component:UserComponent
-
+  },
+  {
+    path: 'new',
+    component: UserComponent
+  },
+  {
+    path: 'customer/edit',
+    component: UserComponent
   }
-  
-
 ];
 
 @NgModule({

@@ -12,13 +12,7 @@ export class EventListComponent implements OnInit {
   events:any = [];
   
   evento: any = {
-    id: '',
-    fecha: new Date(),
-    tipo: '',
     estado: '',
-    id_proveedor: 0,
-    id_cliente: 0,
-    id_paquete: 0
   }
 
   constructor(private eventoServiceService: EventoServiceService) { }
@@ -34,14 +28,15 @@ export class EventListComponent implements OnInit {
   }
 
   getAndUpdateEvent(id: number) {
-    this.eventoServiceService.getEvent(id)
+    this.evento.estado = 'Pagado';
+    this.eventoServiceService.updateEvent(this.events[0].id, this.evento)
       .subscribe(
         res => {
-          this.evento = res;
-          this.evento.estado = 'Pagado';
-          this.eventoServiceService.updateEvent(id, this.evento);
-        }
+          console.log(res);
+        },
+        err => console.error(err)
       )
+             
   }
 
 

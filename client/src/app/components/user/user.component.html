@@ -1,12 +1,51 @@
-<div class="col-md-4">
-  <div class="card bg-info">
+<div class="col-md-4 offset-md-4">
+  <div class="row">
+    <div class="card bg-info">
       <div class="card-header">
-          <h5>Que usuario</h5>
+        <h5>Que usuario</h5>
+      </div>
+      <div class="card-body">
+        <input type="text" name="byid" [(ngModel)]="client.id" placeholder="Id paquete">      
+      </div>
+      <div class="card-header ">
+        <button class="btn btn-success" (click)="gettUser()" >Buscar</button>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div class="col-md-4 offset-md-4">
+  <div>
+      <div class="card">
+          <div class="card-header">
+            <h3>Información de la cuenta</h3>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" name="Usuario" placeholder="Usuario" class="form-control autofocus">
+                </div>
+                <div class="form-group">
+                  <input type="password" name="Contrasena" placeholder="Contraseña" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="Apellidos" placeholder="Apellidos(s)" class="form-control">
+                </div>
+                <div class="form-group"> 
+                  <input type="text" name="Telefono" placeholder="Teléfono" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name=Correo placeholder="Correo electrónico" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="Direccion" placeholder="Dirección" class="form-control">
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-          <div class="card-body">
-            <input type="text" name="byid" [(ngModel)]="client.id" placeholder="Id paquete">      
-        </div>
-        <div class="card-header ">
-          <button class="btn btn-success" (click)="gettUser()" >Buscar</button>
-        </div>
+  </div>
+       
   </div>

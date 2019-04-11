@@ -37,8 +37,8 @@ class EventController {
     public async updateEvent(req: Request, res: Response):Promise<void> {
         try {
             const { id } = req.params.id;
-        await pool.query("UPDATE evento SET ? WHERE id = ?", [req.body, id]);
-        res.json({message: "El evento ha sido actualizado"});
+            await pool.query("UPDATE evento SET ? WHERE id = ?", [req.body, id]);
+            res.json({message: "El evento ha sido actualizado"});
         }
         catch(Error) {
             res.json(Error);

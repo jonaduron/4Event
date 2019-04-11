@@ -14,7 +14,7 @@ class EventRoutes {
         this.router.post('/new', event_controller_1.default.createEvent);
         this.router.get('/details/:id', event_controller_1.default.getEvent);
         this.router.get('/customer/:id_cliente', event_controller_1.default.getEventsByCustomer);
-        this.router.get('/provider/:id_proveedor/', event_controller_1.default.getEventsByProvider);
+        this.router.get('/provider/:id_proveedor', event_controller_1.default.getEventsByProvider);
         this.router.put('/details/:id', event_controller_1.default.updateEvent);
     }
 }

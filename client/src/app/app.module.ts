@@ -19,6 +19,8 @@ import { EditpacketComponent } from './components/editpacket/editpacket.componen
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
 import { UserComponent } from './components/user/user.component';
+import { NewCustomerComponent } from './components/new-customer/new-customer.component';
+import { NavbarProviderComponent } from './components/navbar-provider/navbar-provider.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { UserComponent } from './components/user/user.component';
     EditpacketComponent,
     LogInComponent,
     NewEventComponent,
-    UserComponent
+    UserComponent,
+    NewCustomerComponent,
+    NavbarProviderComponent
    
   ],
   imports: [
