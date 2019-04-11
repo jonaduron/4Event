@@ -6,13 +6,10 @@
       
     </div>
     <div class="card-body">
-        <h5>Nombre:</h5>{{packetdetail.nombre}}
-        <p></p>
-      Precio: {{ packetdetail.precio }}
-      <p></p>
-      Disponibilidad:{{ packetdetail.disponibilidad }}
-      <p></p>
-      proveedor:{{packetdetail.proveedor}}
+        <h5>Nombre:</h5><p>{{packetdetail.nombre}}</p>
+        <p>Precio: {{ packetdetail.precio }}</p>
+        <p>Disponibilidad:{{ packetdetail.disponibilidad }}</p>
+        <p>proveedor:{{packetdetail.proveedor}}</p>
       <a href="" class="btn btn-danger btn-block"(click)="deletePacket(packetdetail.id)">
         delete
       </a>

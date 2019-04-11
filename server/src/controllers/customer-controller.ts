@@ -13,9 +13,14 @@ class CustomerController {
     }
 
     public async updateCustomer(req: Request, res: Response):Promise<void> {
-        const { id } = req.params;
-        await pool.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id]);
-        res.json({message: "The user has been updated"});
+        try {
+            const { id } = req.params;
+            await pool.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id]);
+            res.json({message: "The user has been updated"});
+        }
+        catch(Error) {
+            res.json(Error);
+        }
     }
 
     public async deleteCustomer(req: Request, res: Response):Promise<void> {

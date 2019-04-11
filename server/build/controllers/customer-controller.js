@@ -25,9 +25,14 @@ class CustomerController {
     }
     updateCustomer(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.default.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id]);
-            res.json({ message: "The user has been updated" });
+            try {
+                const { id } = req.params;
+                yield database_1.default.query("UPDATE usuario SET ? WHERE id = ?", [req.body, id]);
+                res.json({ message: "The user has been updated" });
+            }
+            catch (Error) {
+                res.json(Error);
+            }
         });
     }
     deleteCustomer(req, res) {

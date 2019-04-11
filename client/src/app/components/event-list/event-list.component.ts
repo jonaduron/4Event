@@ -10,6 +10,17 @@ import { evento } from 'src/app/models/evento';
 export class EventListComponent implements OnInit {
 @HostBinding('class')classes='row';
   events:any = [];
+  
+  evento: any = {
+    id: '',
+    fecha: new Date(),
+    tipo: '',
+    estado: '',
+    id_proveedor: 0,
+    id_cliente: 0,
+    id_paquete: 0
+  }
+
   constructor(private eventoServiceService: EventoServiceService) { }
 
   ngOnInit() {
@@ -21,5 +32,17 @@ export class EventListComponent implements OnInit {
       err => console.error(err)
     );
   }
+
+  getAndUpdateEvent(id: number) {
+    this.eventoServiceService.getEvent(id)
+      .subscribe(
+        res => {
+          this.evento = res;
+          this.evento.estado = 'Pagado';
+          this.eventoServiceService.updateEvent(id, this.evento);
+        }
+      )
+  }
+
 
 }
