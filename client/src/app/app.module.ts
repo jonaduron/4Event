@@ -22,6 +22,7 @@ import { UserComponent } from './components/user/user.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
 import { NavbarProviderComponent } from './components/navbar-provider/navbar-provider.component';
 import { ProviderListComponent } from './components/provider-list/provider-list.component';
+import { ActualizadoComponent } from './components/actualizado/actualizado.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProviderListComponent } from './components/provider-list/provider-list.
     UserComponent,
     NewCustomerComponent,
     NavbarProviderComponent,
-    ProviderListComponent
+    ProviderListComponent,
+    ActualizadoComponent
    
   ],
   imports: [

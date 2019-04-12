@@ -6,10 +6,10 @@
     <div class="card-body">
       <img src="https://dl6bglhcfn2kh.cloudfront.net/php3zs1aw.png?version=1467129384">
       <div class="form-group has-feedback has-feedback-left">
-          <input type="text" class="form-control" placeholder="Username" />
+          <input type="text" class="form-control"[(ngModel)]="user.usuario" placeholder="Username" />
       </div>
       <div class="form-group has-feedback has-feedback-left">  
-        <input type="password" class="form-control" placeholder="Password" />
+        <input type="password" class="form-control" [(ngModel)]="user.contrasena"placeholder="Password" />
       </div>
     </div>
     <div class="card-header">

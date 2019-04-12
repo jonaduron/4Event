@@ -11,6 +11,7 @@ import { NewEventComponent} from '../app/components/new-event/new-event.componen
 import { UserComponent} from '../app/components/user/user.component'; 
 import { NewCustomerComponent } from '../app/components/new-customer/new-customer.component';
 import { ProviderListComponent } from '../app/components/provider-list/provider-list.component';
+import { ActualizadoComponent} from '../app/components/actualizado/actualizado.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'providers',
     component: ProviderListComponent
+  },
+  {
+    path: 'act',
+    component: ActualizadoComponent
   }
 ];
 
