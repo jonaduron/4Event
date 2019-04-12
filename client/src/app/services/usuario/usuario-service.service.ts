@@ -13,4 +13,7 @@ export class UsuarioServiceService {
   buscarUsuario(id:string){
     return this.http.get(`${this.API_URI}/customers/details/${id}`);
   }
+  editarUsuario(id:string,us:cliente){
+    return this.http.put(`${this.API_URI}/customers/details/${id}`,us);
+  }
 }
