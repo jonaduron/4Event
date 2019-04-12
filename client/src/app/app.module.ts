@@ -21,6 +21,7 @@ import { NewEventComponent } from './components/new-event/new-event.component';
 import { UserComponent } from './components/user/user.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
 import { NavbarProviderComponent } from './components/navbar-provider/navbar-provider.component';
+import { ProviderListComponent } from './components/provider-list/provider-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NavbarProviderComponent } from './components/navbar-provider/navbar-pro
     NewEventComponent,
     UserComponent,
     NewCustomerComponent,
-    NavbarProviderComponent
+    NavbarProviderComponent,
+    ProviderListComponent
    
   ],
   imports: [

@@ -3,7 +3,7 @@ import pool from '../database';
 
 class ProvidersController {
 
-    public async listProviders(req: Request, res: Response) {
+    public async listProviders(req: Request, res: Response):Promise<any> {
         const providers = await pool.query("SELECT * FROM usuario WHERE esProveedor = true;");
         res.json(providers);
     }

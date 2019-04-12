@@ -10,11 +10,12 @@ import { LogInComponent } from '../app/components/log-in/log-in.component';
 import { NewEventComponent} from '../app/components/new-event/new-event.component';
 import { UserComponent} from '../app/components/user/user.component'; 
 import { NewCustomerComponent } from '../app/components/new-customer/new-customer.component';
+import { ProviderListComponent } from '../app/components/provider-list/provider-list.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/user',
+    redirectTo:'/login',
     pathMatch:'full'
   },
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'customer/edit',
     component: UserComponent
+  },
+  {
+    path: 'providers',
+    component: ProviderListComponent
   }
 ];
 
