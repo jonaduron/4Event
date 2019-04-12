@@ -1,54 +1,37 @@
-<div class="col-md-4 offset-md-4">
-  <div class="row">
-    <div class="card bg-info">
-      <div class="card-header">
-        <h5>Que usuario</h5>
-      </div>
-      <div class="card-body">
-        <input type="text" name="byid" [(ngModel)]="client.id" placeholder="Id paquete">      
-      </div>
-      <div class="card-header ">
-        <button class="btn btn-success" (click)="gettUser()" >Buscar</button>
-      </div>
-    </div>  
-  </div>
-</div>
-
-<div class="col-md-4 offset-md-4">
-  <div>
-      <div class="card">
+  <div class="w-75 p-3">
           <div class="card-header">
-            <h3>Información de la cuenta</h3>
+            <h5>Ingrese los siguientes datos para crear su cuenta</h5>
             <div class="card-body">
+              <div class="col-md-4 justify-content-center">
+                <img class="hidden-md hidden-sm hidden-xs justify-content-center" src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" width="200" height="200" />
+              </div>
               <form>
-                <div class="form-group">
-                  <input type="text" name="Usuario" placeholder="Usuario" value="{{use.usuario}}" [(ngModel)]="client.usuario"  class="form-control autofocus">
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" name="Usuario" placeholder="Usuario" class="form-control autofocus">
                 </div>
-                <div class="form-group">
-                  <input type="password" name="Contrasena" placeholder="Contraseña" [(ngModel)]="client.contrasena" value="{{use.contrasena}}" class="form-control">
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="password" name="Contrasena" placeholder="Contraseña" class="form-control">
                 </div>
-                <div class="form-group">
-                  <input type="text" name="Nombre" placeholder="Nombre" [(ngModel)]="client.nombre" value="{{use.nombre}}" class="form-control">
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
                 </div>
-                <div class="form-group">
-                  <input type="text" name="Apellidos" placeholder="Apellidos(s)" [(ngModel)]="client.apellidos" value="{{use.apellidos}}" class="form-control">
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" name="Apellidos" placeholder="Apellidos(s)" class="form-control">
                 </div>
-                <div class="form-group"> 
-                  <input type="text" name="Telefono" placeholder="Teléfono" [(ngModel)]="client.telefono" value="{{use.telefono}}" class="form-control">
+                <div class="form-group has-feedback has-feedback-left"> 
+                  <input type="text" name="Telefono" placeholder="Teléfono" class="form-control">
                 </div>
-                <div class="form-group">
-                  <input type="text" name=Correo placeholder="Correo electrónico" [(ngModel)]="client.correo_electronico" value="{{use.correo_electronico}}" class="form-control">
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" name=Correo placeholder="Correo electrónico" class="form-control">
                 </div>
-                <div class="form-group">
-                  <input type="text" name="Direccion" placeholder="Dirección" [(ngModel)]="client.direccion" value="{{use.direccion}}" class="form-control">
-                </div>
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" name="Direccion" placeholder="Dirección" class="form-control">
+              </div>
               </form>
             </div>
             <div class="card-header ">
                 <button class="btn btn-success" (click)="editar()" >Actualizar</button>
               </div>
           </div>
-        </div>
-  </div>
-       
-  </div>
+        </div>       
+</div>

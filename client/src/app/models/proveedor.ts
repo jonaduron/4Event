@@ -1,11 +1,12 @@
 export interface proveedor {
     id: number;
+    usuario: string;
+    contrasena: string;
     nombre: string;
-    rama: string;
-    descripcion?: string;
     telefono: string;
     correo_electronico: string;
     direccion: string;
-    foto?: File;
-    usuario: string;
+    tipo: string;
+    detalles: string;
+    foto?: File
 }
