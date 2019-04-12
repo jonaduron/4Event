@@ -13,15 +13,19 @@ export class UserComponent implements OnInit {
   @HostBinding('class')classes= 'row';
   client:cliente={
     id: 0,
+    usuario: '',
+    contrasena:'',
     nombre: '',
-    apellidoPaterno: '',
-    apellidoMaterno: '',
+    apellidos: '',
     telefono: '',
     correo_electronico: '',
     direccion: '',
-    foto: null,
-    usuario: '',
+    tipo:'',
+    detalles:'',
+    esProveedor:true,
+    foto:null
   };
+  
   constructor(private usuarioService:UsuarioServiceService) { }
 
   ngOnInit() {
@@ -31,13 +35,27 @@ export class UserComponent implements OnInit {
   gettUser(){
     this.usuarioService.buscarUsuario(String(this.client.id)).subscribe(
       res => {
-        this.use=res[0];
+        this.use=res;
         console.log(res)
+        this.client.esProveedor = this.use.esProveedor
+        this.client.tipo = this.use.tipo
+        this.client.detalles = this.use.detalles
+
       },
       err => console.error(err)
       
     );
 
+  }
+
+  editar(){
+    console.log(this.client)
+    this.usuarioService.editarUsuario(String(this.client.id),this.client).subscribe(
+
+      res=>{
+console.log(res)
+      },err=> console.log(err)
+    );
   }
 
 }

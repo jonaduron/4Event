@@ -1,11 +1,14 @@
 export interface cliente{
     id: number;
+    usuario: string;
+    contrasena:string;
     nombre: string;
-    apellidoPaterno: string;
-    apellidoMaterno?: string;
+    apellidos: string;
     telefono: string;
     correo_electronico: string;
     direccion: string;
-    foto?: File;
-    usuario: string;
+    tipo:string;
+    detalles:string;
+    esProveedor:boolean;
+    foto?:File;
 }

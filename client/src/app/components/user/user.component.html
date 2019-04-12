@@ -22,28 +22,31 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <input type="text" name="Usuario" placeholder="Usuario" class="form-control autofocus">
+                  <input type="text" name="Usuario" placeholder="Usuario" value="{{use.usuario}}" [(ngModel)]="client.usuario"  class="form-control autofocus">
                 </div>
                 <div class="form-group">
-                  <input type="password" name="Contrasena" placeholder="Contraseña" class="form-control">
+                  <input type="password" name="Contrasena" placeholder="Contraseña" [(ngModel)]="client.contrasena" value="{{use.contrasena}}" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="Nombre" placeholder="Nombre" class="form-control">
+                  <input type="text" name="Nombre" placeholder="Nombre" [(ngModel)]="client.nombre" value="{{use.nombre}}" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="Apellidos" placeholder="Apellidos(s)" class="form-control">
+                  <input type="text" name="Apellidos" placeholder="Apellidos(s)" [(ngModel)]="client.apellidos" value="{{use.apellidos}}" class="form-control">
                 </div>
                 <div class="form-group"> 
-                  <input type="text" name="Telefono" placeholder="Teléfono" class="form-control">
+                  <input type="text" name="Telefono" placeholder="Teléfono" [(ngModel)]="client.telefono" value="{{use.telefono}}" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" name=Correo placeholder="Correo electrónico" class="form-control">
+                  <input type="text" name=Correo placeholder="Correo electrónico" [(ngModel)]="client.correo_electronico" value="{{use.correo_electronico}}" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="Direccion" placeholder="Dirección" class="form-control">
+                  <input type="text" name="Direccion" placeholder="Dirección" [(ngModel)]="client.direccion" value="{{use.direccion}}" class="form-control">
                 </div>
               </form>
             </div>
+            <div class="card-header ">
+                <button class="btn btn-success" (click)="editar()" >Actualizar</button>
+              </div>
           </div>
         </div>
   </div>
