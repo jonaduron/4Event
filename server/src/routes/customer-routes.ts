@@ -9,11 +9,11 @@ class CustomerRoutes {
         this.config();
     }
 
-    // Falta definir las rutas con las que trabajará cada método
     config():void {
         this.router.delete('/details/:id', customerController.deleteCustomer);
         this.router.get('/details/:id', customerController.getCustomer);
         this.router.put('/details/:id', customerController.updateCustomer);
+        this.router.put('/password/:usuario', customerController.updatePassword);
     }
 }
 

@@ -26,7 +26,7 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
     routes() {
-        this.app.use('/log', index_routes_1.default);
+        this.app.use('/', index_routes_1.default);
         this.app.use('/customers', customer_routes_1.default);
         this.app.use('/reports', report_routes_1.default);
         this.app.use('/events', event_routes_1.default);

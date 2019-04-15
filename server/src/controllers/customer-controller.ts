@@ -28,6 +28,12 @@ class CustomerController {
         await pool.query("DELETE FROM usuario WHERE id = ?", [id]);
         res.json({message: "The user has been deleted succesfully"});
     }
+
+    public async updatePassword(req: Request, res: Response):Promise<void> {
+        const { user } = req.params;
+        await pool.query("UPDATE usuario SET contrasena = ? WHERE usuario = ?", [req.body, user]);
+        res.json({message: "Se ha actualizado la contraseña"});
+    }
 }
 
 const customerController = new CustomerController();

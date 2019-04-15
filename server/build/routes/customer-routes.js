@@ -10,11 +10,11 @@ class CustomerRoutes {
         this.router = express_1.Router();
         this.config();
     }
-    // Falta definir las rutas con las que trabajará cada método
     config() {
         this.router.delete('/details/:id', customer_controller_1.default.deleteCustomer);
         this.router.get('/details/:id', customer_controller_1.default.getCustomer);
         this.router.put('/details/:id', customer_controller_1.default.updateCustomer);
+        this.router.put('/password/:usuario', customer_controller_1.default.updatePassword);
     }
 }
 const customerRoutes = new CustomerRoutes();

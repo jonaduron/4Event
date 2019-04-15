@@ -9,6 +9,6 @@ export class PacketandeventServiceService {
   API_URI='http://localhost:3000';
   constructor(private http:HttpClient) { }
   getEvents(){
-    return this.http.get(`${this.API_URI}/reports/packetandevents`);
+    return this.http.get(`${this.API_URI}/reports/packetsandevents`);
   }
 }
