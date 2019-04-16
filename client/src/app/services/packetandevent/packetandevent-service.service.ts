@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PacketandeventServiceService {
 
-  API_URI='http://localhost:3000';
+  API_URI='http://192.168.137.207:3000';
   constructor(private http:HttpClient) { }
   getEvents(){
     return this.http.get(`${this.API_URI}/reports/packetsandevents`);

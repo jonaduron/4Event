@@ -8,7 +8,7 @@ import { customersandproviders} from '../../models/customersandproviders';
 })
 export class customersandprovidesServiceService {
 
-  API_URI='http://localhost:3000';
+  API_URI='http://192.168.137.207:3000';
   constructor(private http:HttpClient) { }
   getcustomersandprovides(){
     return this.http.get(`${this.API_URI}/reports/customersandproviders`);

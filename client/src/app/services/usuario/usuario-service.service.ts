@@ -7,7 +7,7 @@ import { cliente} from '../../models/cliente';
   providedIn: 'root'
 })
 export class UsuarioServiceService {
-  API_URI='http://localhost:3000';
+  API_URI='http://192.168.137.207:3000';
   constructor(private http:HttpClient) { }
 
   crearUsuario(usuario: any) {

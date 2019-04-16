@@ -8,7 +8,7 @@ import {paquete} from '../../models/paquete';
 })
 export class PaqueteServiceService {
   
-  API_URI='http://localhost:3000';
+  API_URI='http://192.168.137.207:3000';
   constructor(private Http:HttpClient) { }
   getEvents(){
     return this.Http.get(`${this.API_URI}`);

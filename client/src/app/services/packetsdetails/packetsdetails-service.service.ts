@@ -8,7 +8,7 @@ import {packetsdetails} from '../../models/packetsdetails';
 })
 export class PacketsdetailsServiceService {
 
-  API_URI='http://localhost:3000';
+  API_URI='http://192.168.137.207:3000';
   constructor(private http:HttpClient) { }
   getpacketsdetails(){
     return this.http.get(`${this.API_URI}/reports/packetsdetails`);
