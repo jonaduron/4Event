@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./actualizado.component.css']
 })
 export class ActualizadoComponent implements OnInit {
+  @HostBinding('class')classes='row';
 
   constructor(private ri:Router) { }
 

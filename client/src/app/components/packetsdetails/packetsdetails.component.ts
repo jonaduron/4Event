@@ -1,6 +1,6 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ViewChild, ElementRef } from '@angular/core';
 import { PacketsdetailsServiceService } from '../../services/packetsdetails/packetsdetails-service.service';
-
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-packetsdetails',
@@ -33,6 +33,21 @@ res =>{
 err => console.error(err)
     )
     
+  }
+@ViewChild('report') report: ElementRef;
+  download(){
+    let doc = new jsPDF;
+    let specialElemetnHandlers = {
+      '#editor': function(element, renderer ){
+        return true;
+      }
+    };
+    let report = this.report.nativeElement;
+    doc.fromHTML( report.innerHTML,15,15, {
+      'width': 190,
+      'elementHandlers': specialElemetnHandlers
+    });
+    doc.save('testi.pdf');
   }
 
 }
