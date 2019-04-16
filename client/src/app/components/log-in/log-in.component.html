@@ -1,21 +1,26 @@
-<div class="col-sm-3 col-md-4 col-xs-6 d-flex justify-content-center">
-  <div class="card text-center">
-    <div class="card-header bg-info">
-      <h3>Login</h3>
-    </div>
-    <div class="card-body">
-      <img src="https://dl6bglhcfn2kh.cloudfront.net/php3zs1aw.png?version=1467129384">
-      <div class="form-group has-feedback has-feedback-left">
-          <input type="text" class="form-control"[(ngModel)]="user.usuario" placeholder="Username" />
-      </div>
-      <div class="form-group has-feedback has-feedback-left">  
-        <input type="password" class="form-control" [(ngModel)]="user.contrasena"placeholder="Password" />
-      </div>
-    </div>
-    <div class="card-header">
-      <button class="btn btn-dark btn-lg" (click)="getLog()">Log in</button>
-    </div>
-    <a [routerLink]="['/new']" routerLinkActive="router-link-active">¿Olvidaste tu contraseña?</a>
-    <a [routerLink]="['/new']" routerLinkActive="router-link-active">¿No tienes cuenta?</a>
+<div class="contenedor">
+    <div class="row justify-content-center">
+        <div class="card text-center">
+            <div class="card-header bg-info text-white">
+              <h3>Login</h3>
+            </div>
+            <div class="card-body">
+              <img src="../../../assets/login.png">
+              <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" class="form-control" [(ngModel)]="user.usuario" placeholder="Username" />
+              </div>
+              <div class="form-group has-feedback has-feedback-left">  
+                <input type="password" class="form-control" [(ngModel)]="user.contrasena" placeholder="Password" />
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-dark btn-lg" (click)="getLog()">Log in</button>
+            </div>
+            <div>
+                <a [routerLink]="['/password']" routerLinkActive="router-link-active">¿Olvidaste tu contraseña?</a>
+            </div>
+           <div>
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active">Volver al home</a>
+            </div>
+          </div>
   </div>
-</div>

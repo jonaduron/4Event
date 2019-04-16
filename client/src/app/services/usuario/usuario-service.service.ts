@@ -10,10 +10,19 @@ export class UsuarioServiceService {
   API_URI='http://localhost:3000';
   constructor(private http:HttpClient) { }
 
-  buscarUsuario(id:string){
+  crearUsuario(usuario: any) {
+    return this.http.post(`${this.API_URI}/new`, usuario);
+  }
+
+  buscarUsuario(id: string){
     return this.http.get(`${this.API_URI}/customers/details/${id}`);
   }
-  editarUsuario(id:string,us:cliente){
-    return this.http.put(`${this.API_URI}/customers/details/${id}`,us);
+
+  editarUsuario(id: string, us: cliente){
+    return this.http.put(`${this.API_URI}/customers/details/${id}`, us);
+  }
+
+  actualizarContrasena(usuario: string, contrasena: string) {
+    return this.http.put(`${this.API_URI}/customers/password/${usuario}`, contrasena);
   }
 }

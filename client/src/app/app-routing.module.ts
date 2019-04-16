@@ -11,13 +11,19 @@ import { NewEventComponent} from '../app/components/new-event/new-event.componen
 import { UserComponent} from '../app/components/user/user.component'; 
 import { NewCustomerComponent } from '../app/components/new-customer/new-customer.component';
 import { ProviderListComponent } from '../app/components/provider-list/provider-list.component';
+import { HomeComponent } from '../app/components/home/home.component';
+import { PasswordComponent } from '../app/components/password/password.component';
 import { ActualizadoComponent} from '../app/components/actualizado/actualizado.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/login',
+    redirectTo:'/home',
     pathMatch:'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path:'events',
@@ -57,7 +63,11 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: UserComponent
+    component: NewCustomerComponent
+  },
+  {
+    path: 'password',
+    component: PasswordComponent
   },
   {
     path: 'customer/edit',

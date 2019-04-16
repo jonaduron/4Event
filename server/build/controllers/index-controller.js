@@ -16,7 +16,7 @@ class IndexController {
     login(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { usuario } = req.params;
-            const valores = yield database_1.default.query('SELECT esProveedor,contrasena FROM usuario WHERE usuario = ?', [usuario]);
+            const valores = yield database_1.default.query('SELECT esProveedor, contrasena FROM usuario WHERE usuario = ?', [usuario]);
             // if(valores[0] == req.params.usuario && valores[1] == req.params.contrasena) {
             //     return true;
             // }

@@ -11,35 +11,38 @@ import { Router } from '@angular/router';
 })
 @Injectable()
 export class LogInComponent implements OnInit {
+ 
   pass: any;
-  user: login = {
-    usuario: '',
-    contrasena: ''
-  };
-  @Output() change = new EventEmitter();
 
-  constructor(private log: LoginServiceService, private ruta: Router) { }
+  user: login = {
+    id: 0,
+    usuario: '',
+    contrasena: '',
+    esProveedor: false
+  };
+
+  constructor(private loginService: LoginServiceService, private ruta: Router) { }
 
   ngOnInit() {
   }
 
-
   getLog() {
-    this.log.getLog(this.user.usuario).subscribe(
+    this.loginService.getLog(this.user.usuario).subscribe(
       res => {
         this.pass = res;
         console.log(res)
-
-
         if (this.pass[0].contrasena == this.user.contrasena) {
-          this.ruta.navigate(['/packetsdetails'])
-
+          if(this.pass[0].esProveedor == false) {
+            this.ruta.navigate(['/providers'])
+          }
+          else {
+            this.ruta.navigate(['/packetsdetails']);
+          }
+          
         } else {
-
+          
         }
       }
     );
-    
   }
-
 }

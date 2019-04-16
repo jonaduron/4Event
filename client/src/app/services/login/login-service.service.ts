@@ -15,9 +15,8 @@ datos:any;
   constructor(private http:HttpClient) { }
 
   getLog(user:string){
-    this.datos = this.http.get(`${this.API_URI}/log/login/${user}`); 
+    this.datos = this.http.get(`${this.API_URI}/login/${user}`); 
     return this.datos;
-     
   }
   
 }

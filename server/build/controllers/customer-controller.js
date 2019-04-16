@@ -42,6 +42,13 @@ class CustomerController {
             res.json({ message: "The user has been deleted succesfully" });
         });
     }
+    updatePassword(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { user } = req.params;
+            yield database_1.default.query("UPDATE usuario SET contrasena = ? WHERE usuario = ?", [req.body, user]);
+            res.json({ message: "Se ha actualizado la contraseña" });
+        });
+    }
 }
 const customerController = new CustomerController();
 exports.default = customerController;
