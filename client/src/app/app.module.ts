@@ -43,7 +43,7 @@ import { ActualizadoComponent } from './components/actualizado/actualizado.compo
     NavbarProviderComponent,
     ProviderListComponent,
     HomeComponent,
-    PasswordComponent
+    PasswordComponent,
     ActualizadoComponent   
   ],
   imports: [
