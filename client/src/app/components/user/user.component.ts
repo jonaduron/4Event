@@ -37,10 +37,16 @@ export class UserComponent implements OnInit {
       res => {
         this.use=res;
         console.log(res)
-        this.client.esProveedor = this.use.esProveedor
+        this.client.id = this.use.id
+        this.client.usuario = this.use.usuario
+        this.client.contrasena = this.use.contrasena
+        this.client.nombre = this.use.nombre
+        this.client.apellidos = this.use.apellidos
+        this.client.telefono = this.use.telefono
+        this.client.correo_electronico = this.use.correo_electronico
+        this.client.direccion = this.use.direccion
         this.client.tipo = this.use.tipo
         this.client.detalles = this.use.detalles
-
       },
       err => console.error(err)
       

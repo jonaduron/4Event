@@ -13,6 +13,7 @@ import { NewCustomerComponent } from '../app/components/new-customer/new-custome
 import { ProviderListComponent } from '../app/components/provider-list/provider-list.component';
 import { HomeComponent } from '../app/components/home/home.component';
 import { PasswordComponent } from '../app/components/password/password.component';
+import { ActualizadoComponent} from '../app/components/actualizado/actualizado.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'providers',
     component: ProviderListComponent
+  },
+  {
+    path: 'act',
+    component: ActualizadoComponent
   }
 ];
 

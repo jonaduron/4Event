@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding, Injectable, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Injectable, Output, EventEmitter } from '@angular/core';
 import { login } from '../../models/login';
 import { LoginServiceService } from '../../services/login/login-service.service';
 import { Router } from '@angular/router';
@@ -30,6 +30,7 @@ export class LogInComponent implements OnInit {
     this.loginService.getLog(this.user.usuario).subscribe(
       res => {
         this.pass = res;
+        console.log(res)
         if (this.pass[0].contrasena == this.user.contrasena) {
           if(this.pass[0].esProveedor == false) {
             this.ruta.navigate(['/providers'])

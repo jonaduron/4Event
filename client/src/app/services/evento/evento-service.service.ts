@@ -20,8 +20,8 @@ export class EventoServiceService {
   getEvent(id: number) {
     return this.http.get(`${this.API_URI}/events/details/${id}`);
   }
-  updateEvent(id: number, evento) {
-    return this.http.put(`${this.API_URI}/events/details/${id}`, evento);
+  updateEvent(id: string,par:evento) {
+    return this.http.put(`${this.API_URI}/events/details/${id}`,par);
   }
 }
  

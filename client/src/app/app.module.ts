@@ -24,6 +24,7 @@ import { NavbarProviderComponent } from './components/navbar-provider/navbar-pro
 import { ProviderListComponent } from './components/provider-list/provider-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { PasswordComponent } from './components/password/password.component';
+import { ActualizadoComponent } from './components/actualizado/actualizado.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { PasswordComponent } from './components/password/password.component';
     ProviderListComponent,
     HomeComponent,
     PasswordComponent
-   
+    ActualizadoComponent   
   ],
   imports: [
     BrowserModule,

@@ -51,7 +51,7 @@ class EventController {
     updateEvent(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const { id } = req.params.id;
+                const { id } = req.params;
                 yield database_1.default.query("UPDATE evento SET ? WHERE id = ?", [req.body, id]);
                 res.json({ message: "El evento ha sido actualizado" });
             }
